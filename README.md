@@ -323,18 +323,4 @@ console.log(j); // Error! (ব্লকের বাইরে অ্যাক্
 - Font Awesome Icons
 - Fake Store API
 
-## 📱 Screenshots
-
-### Home Page
-- Hero section with banner image
-- Why Choose Us features
-- Trending products
-
-### Products Page
-- Category filter buttons
-- Product grid with cards
-- Product details modal
-
-## 👤 Author
-
-**SwiftCart Team**
+ 
