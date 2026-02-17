@@ -15,6 +15,12 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
     </style>
 </head>
 
@@ -33,28 +39,29 @@
                     </div>
                     <ul tabindex="0"
                         class="menu menu-sm dropdown-content bg-slate-800 rounded-box z-50 mt-3 w-52 p-2 shadow-lg">
-                        <li><a class="text-white hover:text-indigo-400">Home</a></li>
-                        <li><a class="text-white hover:text-indigo-400">Products</a></li>
-                        <li><a class="text-white hover:text-indigo-400">About</a></li>
-                        <li><a class="text-white hover:text-indigo-400">Contact</a></li>
+                        <li><a href="index.html" class="text-white hover:text-indigo-400">Home</a></li>
+                        <li><a href="products.html" class="text-white hover:text-indigo-400">Products</a></li>
+                        <li><a href="#" class="text-white hover:text-indigo-400">About</a></li>
+                        <li><a href="#" class="text-white hover:text-indigo-400">Contact</a></li>
                     </ul>
                 </div>
-                <a class="text-xl font-bold text-indigo-500 cursor-pointer">SwiftCart</a>
+                <a href="index.html" class="text-xl font-bold text-indigo-500 cursor-pointer">SwiftCart</a>
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal px-1 gap-2">
-                    <li><a class="text-indigo-400 font-medium hover:text-indigo-300">Home</a></li>
-                    <li><a class="text-gray-300 hover:text-indigo-400">Products</a></li>
-                    <li><a class="text-gray-300 hover:text-indigo-400">About</a></li>
-                    <li><a class="text-gray-300 hover:text-indigo-400">Contact</a></li>
+                    <li><a href="index.html" class="text-indigo-400 font-medium hover:text-indigo-300">Home</a></li>
+                    <li><a href="products.html" class="text-gray-300 hover:text-indigo-400">Products</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-indigo-400">About</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-indigo-400">Contact</a></li>
                 </ul>
             </div>
             <div class="navbar-end">
-                <button class="btn btn-ghost btn-circle text-white hover:bg-slate-700">
+                <button class="btn btn-ghost btn-circle text-white hover:bg-slate-700 relative">
                     <div class="indicator">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
+                        <span class="badge badge-sm badge-primary indicator-item cart-count">0</span>
                     </div>
                 </button>
             </div>
@@ -75,9 +82,9 @@
                 <p class="text-gray-300 mt-4 text-base md:text-lg leading-relaxed">
                     Discover the latest trends in fashion, electronics, and more. Shop with confidence and style at SwiftCart.
                 </p>
-                <button class="btn bg-orange-500 hover:bg-orange-600 border-none text-white mt-6 px-8 rounded-lg">
+                <a href="products.html" class="btn bg-orange-500 hover:bg-orange-600 border-none text-white mt-6 px-8 rounded-lg">
                     Shop Now
-                </button>
+                </a>
             </div>
         </div>
     </section>
@@ -141,7 +148,7 @@
             </div>
 
             <!-- Products Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 homeProducts">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 homeProducts">
                 <!-- Products will be loaded here by JavaScript -->
             </div>
         </div>
@@ -217,6 +224,21 @@
             </div>
         </div>
     </footer>
+
+    <!-- Product Details Modal -->
+    <dialog id="productModal" class="modal">
+        <div class="modal-box max-w-3xl bg-white">
+            <form method="dialog">
+                <button class="btn btn-sm btn-circle btn-ghost absolute right-4 top-4 text-gray-500 hover:text-gray-700">✕</button>
+            </form>
+            <div id="modalContent" class="flex flex-col md:flex-row gap-6">
+                <!-- Modal content will be loaded here -->
+            </div>
+        </div>
+        <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+        </form>
+    </dialog>
 
     <script src="mian.js"></script>
 </body>
